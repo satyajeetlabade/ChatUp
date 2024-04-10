@@ -1,8 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-class SignInPage extends StatelessWidget {
-  const SignInPage({super.key});
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class SignInPage extends StatelessWidget {
                 children: [
                   const Center(
                     child: Text(
-                      "Sign-In",
+                      "Sign-Up",
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -39,7 +39,7 @@ class SignInPage extends StatelessWidget {
                   ),
                   const Center(
                     child: Text(
-                      "Login to your account",
+                      "Create a new Account",
                       style: TextStyle(
                           color: Colors.black45,
                           fontWeight: FontWeight.w500,
@@ -54,7 +54,7 @@ class SignInPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                       child: Container(
                         padding: const EdgeInsets.all(10),
-                        height: MediaQuery.of(context).size.height / 2,
+                        height: MediaQuery.of(context).size.height / 1.5,
                         width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(
                             color: Colors.white,
@@ -62,6 +62,27 @@ class SignInPage extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
+                            const Text(
+                              "Name",
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.w300),
+                            ),
+                            const SizedBox(height: 5),
+                            Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  border: Border.all(
+                                      color: Colors.black38, width: 1.0)),
+                              child: TextFormField(
+                                decoration: const InputDecoration(
+                                    prefixIcon: Icon(Icons.person,
+                                        color: Color(0xffb490ca)),
+                                    border: InputBorder.none),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
                             const Text(
                               "Email",
                               style: TextStyle(
@@ -107,6 +128,30 @@ class SignInPage extends StatelessWidget {
                                 obscureText: true,
                               ),
                             ),
+                            const SizedBox(height: 5),
+                            const Text(
+                              "Confirm Password",
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.w300),
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  border: Border.all(
+                                      color: Colors.black38, width: 1.0)),
+                              child: TextFormField(
+                                decoration: const InputDecoration(
+                                  prefixIcon: Icon(Icons.password_rounded,
+                                      color: Color(0xffb490ca)),
+                                  border: InputBorder.none,
+                                  suffixIcon: Icon(
+                                    Icons.remove_red_eye_outlined,
+                                    color: Color(0xffb490ca),
+                                  ),
+                                ),
+                                obscureText: true,
+                              ),
+                            ),
                             const SizedBox(
                               height: 10,
                             ),
@@ -129,10 +174,10 @@ class SignInPage extends StatelessWidget {
                               child: ElevatedButton(
                                 onPressed: () {},
                                 style: ElevatedButton.styleFrom(
-                                    backgroundColor: const Color(0xffcda0e8),
+                                    backgroundColor: const Color(0xffb490ca),
                                     shape: const StadiumBorder()),
                                 child: const Text(
-                                  'Sign In',
+                                  'Register',
                                   style: TextStyle(color: Colors.black),
                                 ),
                               ),
@@ -144,11 +189,11 @@ class SignInPage extends StatelessWidget {
                   ),
                   RichText(
                     text: TextSpan(
-                      text: 'Don\'t have an account?',
+                      text: 'Already have a account?',
                       style: const TextStyle(color: Colors.black, fontSize: 18),
                       children: <TextSpan>[
                         TextSpan(
-                            text: ' Sign up',
+                            text: ' Sign In',
                             style: const TextStyle(
                                 color: Colors.blueAccent, fontSize: 18),
                             recognizer: TapGestureRecognizer()..onTap = () {}),
